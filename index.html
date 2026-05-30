@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Cup 2026 — Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+  <div class="hero">
+    <p class="hero-eyebrow">Your Official Predictions</p>
+    <span class="hero-trophy">🏆</span>
+    <h1>World Cup<br>2026</h1>
+    <p class="hero-sub">USA &nbsp;·&nbsp; Canada &nbsp;·&nbsp; Mexico &nbsp;&nbsp;|&nbsp;&nbsp; Jun 11 – Jul 19</p>
+  </div>
+
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('groups')">Group Stage</button>
+      <button class="tab-btn" onclick="switchTab('r32')">Round of 32</button>
+      <button class="tab-btn" onclick="switchTab('r16')">Round of 16</button>
+      <button class="tab-btn" onclick="switchTab('qf')">Quarters</button>
+      <button class="tab-btn" onclick="switchTab('sf')">Semis &amp; Final</button>
+    </div>
+  </div>
+
+  <!-- GROUP STAGE -->
+  <div id="tab-groups" class="tab-content active">
+    <div class="section-title">Group Stage</div>
+    <p class="hint">Click a team in each fixture to pick the winner — picks carry through to the knockout rounds.</p>
+    <div class="groups-grid" id="groups-container"></div>
+    <div class="progress-wrap"><div class="progress-fill" id="group-progress" style="width:0%"></div></div>
+    <p class="progress-label" id="group-progress-label">0 / 36 fixtures picked</p>
+    <button class="cta-btn" onclick="switchTab('r32')">Continue to Round of 32 →</button>
+  </div>
+
+  <!-- ROUND OF 32 -->
+  <div id="tab-r32" class="tab-content">
+    <div class="section-title">Round of 32</div>
+    <p class="hint">Teams are populated from your group stage picks. Click a team to advance them.</p>
+    <div id="r32-container"></div>
+    <button class="cta-btn" onclick="switchTab('r16')">Continue to Round of 16 →</button>
+  </div>
+
+  <!-- ROUND OF 16 -->
+  <div id="tab-r16" class="tab-content">
+    <div class="section-title">Round of 16</div>
+    <p class="hint">Pick your Round of 16 winners.</p>
+    <div id="r16-container"></div>
+    <button class="cta-btn" onclick="switchTab('qf')">Continue to Quarterfinals →</button>
+  </div>
+
+  <!-- QUARTERS -->
+  <div id="tab-qf" class="tab-content">
+    <div class="section-title">Quarterfinals</div>
+    <p class="hint">Four matches — pick your four semifinalists.</p>
+    <div id="qf-container"></div>
+    <button class="cta-btn" onclick="switchTab('sf')">Continue to Semifinals →</button>
+  </div>
+
+  <!-- SEMIS & FINAL -->
+  <div id="tab-sf" class="tab-content">
+    <div class="section-title">Semifinals</div>
+    <p class="hint">Pick your two finalists, then crown your champion below.</p>
+    <div id="sf-container"></div>
+    <div class="final-section">
+      <div class="final-card" id="final-card">
+        <h2>⚽ The Final</h2>
+        <p class="final-subtitle">19 July 2026 &nbsp;·&nbsp; MetLife Stadium, New York</p>
+        <div class="final-teams" id="final-teams-display"></div>
+        <div class="champion-box" id="champion-box">
+          <p>🏆 Your World Cup Champion</p>
+          <h3 id="champion-name"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
